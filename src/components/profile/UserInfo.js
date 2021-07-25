@@ -54,7 +54,6 @@ const ButtonWrap = Styled.a`
 
 //서버 통해서 Bio 값 JSON으로 받아오기
 const UserInfo = ({ userInfo }) => {
-	console.log(userInfo);
 	try {
 		const {
 			image, 
