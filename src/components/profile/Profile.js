@@ -24,30 +24,14 @@ const Profile = () => {
 
 	const friendsList = ["경민", "태연", "주은", "소린", "기연"];
 
-	//이 코드 제대로 공부하기^^
-	const [userState, setUserState] = useState({
-    status: "idle",
-    data: null,
-  });
 
-	const getFriendName = async (name) => {
-    setUserState({ ...userState, status: "pending" });
-    try {
-			const data = friendsList[friendsList.indexOf(name)];
-      if (data === null) throw Error;
-      setUserState({ status: "resolved", data: data });
-    } catch (e) {
-      setUserState({ status: "rejected", data: null });
-      console.log(e);
-    }
-	};
 
 
 	return(
 		<div>
 				<ProfileWrap>
 				<UserInfo userInfo={userInfo}></UserInfo>
-				<Friends friendsList={friendsList} getFriendName={getFriendName}></Friends>
+				<Friends friendsList={friendsList}></Friends>
 				</ProfileWrap>
 		</div>
 			
