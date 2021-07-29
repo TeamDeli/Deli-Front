@@ -52,7 +52,7 @@ const ButtonWrap = Styled.a`
 	}
 `;
 
-//서버 통해서 Bio 값 JSON으로 받아오기
+
 const UserInfo = ({ userInfo }) => {
 	try {
 		const {
@@ -87,12 +87,11 @@ const UserInfo = ({ userInfo }) => {
 					</a>
 				</ButtonWrap>			
 			</div>
-
-			
 		);
 
 	} catch (err) {
 		console.error(err);
+		console.log("아오");
 	}
 }
 

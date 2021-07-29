@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import Styled from 'styled-components';
 
 const FriendsWrap = Styled.div`
@@ -37,6 +37,7 @@ const FriendsWrap = Styled.div`
     }
 
     .buttonClass {
+      type: submit;
       font-size: 20px;
       width:80px;
       height:40px;
@@ -75,63 +76,65 @@ const FriendsWrap = Styled.div`
   }
 `;
 
-const Friends = ({ friendsList }) => {
-  try{
-    const [userName, setUserName] = useState("");
+const Friends = ({ list }) => {
+  const [userName, setUserName] = useState("");
+  const [friendsList, setFriendsList] = useState(list);
+  let changedList = []
+  function isUserName(userName) {
+    if (
+      (friendsList) && (friendsList.includes(userName))
+    ) {
+      changedList.push(userName);
+      setFriendsList(changedList);
+    }
+    else {
+      setFriendsList(changedList);
+    }
 
-    const handleChange = (event) => {
-      setUserName(event.target.value);
-    };
+  }
 
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      if (
-        friendsList.filter((friend) => friend === userName)
-      ) { 
-        friendsList = [];
-        friendsList.push(userName);
-      }
-      else {
-        friendsList=[];
-      }
-      setUserName("");
-    };
+  useCallback(() => { 
+    isUserName(userName);
+  }, [friendsList]);
 
-    useEffect(() => {
-      
-    }, [friendsList])
+  
+  const handleChange = (event) => {
+    setUserName(event.target.value);
+    setFriendsList(list);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    isUserName(userName);
+  };
 
 
-    //submit하고 result 만들어야함
-
-    //a href -> router로 변경 
-    return(
-      <FriendsWrap>
-        <a 
-        className="friends"
-        href="localhost:3000">
-          친구
-        </a>
-        <div className="search">
+  //a href -> router로 변경 
+  return(
+    <FriendsWrap>
+      <a 
+      className="friends"
+      href="localhost:3000">
+        친구
+      </a>
+      <div className="search">
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="친구 이름을 입력해주세요"
             value={userName}
             onChange={handleChange}
           />
-          <button className="buttonClass" onSubmit={handleSubmit}>찾기</button>
-        </div>
-        <div className="scrollView">
-          { friendsList.map((friend) => (
-            <p>{friend}</p>
-            ))}
-        </div>
-      </FriendsWrap>
-    );
-
-  } catch (err) {
-    console.log(err);
-  }
+          <button className="buttonClass">찾기</button>
+          </form>
+      </div>
+      <div className="scrollView">
+        {friendsList && friendsList.map((friend) => (
+          <p>{friend}</p>
+          ))}
+      </div>
+    </FriendsWrap>
+  );
 }
 
 export default Friends;
