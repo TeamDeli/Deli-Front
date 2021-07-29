@@ -108,8 +108,6 @@ const Friends = ({ list }) => {
     isUserName(userName);
   };
 
-
-  //a href -> router로 변경 
   return(
     <FriendsWrap>
       <a 
