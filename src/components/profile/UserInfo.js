@@ -91,7 +91,6 @@ const UserInfo = ({ userInfo }) => {
 
 	} catch (err) {
 		console.error(err);
-		console.log("아오");
 	}
 }
 
