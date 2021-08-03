@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import Styled from "styled-components";
 import UserInfo from '../components/profile/UserInfo';
 import Friends from '../components/profile/Friends';
 import { getProfile } from '../lib/api';
 import { withRouter } from 'react-router';
 import defaultImage from '../user.svg'
-
 
 const ProfileWrap = Styled.div`
   display:flex;
@@ -18,15 +17,14 @@ const Profile = () => {
 	const [userData, setUserData] = useState({});
 
 	//json-server로 연결해서 userData 가져오기	
-
-  (async () => {
-    const response = await axios.get("https://localhost:4000/profile");
-    console.log(response.data);
-    setUserData(response.data);
-  })();
-  const [userData, setUserData] = useState(null);
-
-/*
+	useEffect(() => {
+		(async () => {
+			const data = await getProfile();
+			setUserData(data);
+		})();
+	},[]);
+	
+	/*
 	const userData = {
 		image: defaultImage,
 		name: "기연",
@@ -61,6 +59,5 @@ const Profile = () => {
 		</div>
 	);
 }
-
 
 export default withRouter(Profile);
