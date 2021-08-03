@@ -1,0 +1,85 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.fc .fc-button-primary:enabled {
+  background-color: white;
+  color: black;
+  border: white;
+}
+.fc .fc-button-primary {
+  background-color: white;
+  color: black;
+  border: white;
+}
+.form-control {
+  color: black;
+  background: white;
+  border: white;
+  font-size: 60px;
+  text-align: center;
+  font: -webkit-mini-control;
+  font-weight: 500;
+}
+.fc .fc-toolbar-title {
+  font-size: 1.75em;
+  margin: 0;
+  font-family: cursive;
+}
+
+.fc-h-event .fc-event-title-container {
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  font-family: "Noto Sans KR";
+}
+
+.fc-daygrid-dot-event .fc-event-title {
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  overflow: hidden;
+  font-weight: bold;
+  font-family: "Noto Sans KR";
+}
+
+.fc .fc-daygrid-day-number {
+  position: relative;
+  z-index: 4;
+  padding: 10px;
+  font: icon;
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
