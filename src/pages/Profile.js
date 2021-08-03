@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import Styled from "styled-components";
-import UserInfo from '../components/profile/UserInfo';
-import Friends from '../components/profile/Friends';
-import { getProfile } from '../lib/api';
-import axios from 'axios';
-import { withRouter } from 'react-router';
-import defaultImage from '../user.svg'
+import UserInfo from "../components/profile/UserInfo";
+import Friends from "../components/profile/Friends";
+import { getProfile } from "../lib/api";
+import axios from "axios";
+import { withRouter } from "react-router";
+import defaultImage from "../user.svg";
 
 const ProfileWrap = Styled.div`
   display:flex;
@@ -14,17 +14,14 @@ const ProfileWrap = Styled.div`
 `;
 
 const Profile = () => {
-	(async () => {
-		const response = await axios.get(
-			'https://localhost:4000/profile'
-		);
-		console.log(response.data);
-		setUserData(response.data);
-	})();
-	const [userData, setUserData] = useState(null);
-	
+  (async () => {
+    const response = await axios.get("https://localhost:4000/profile");
+    console.log(response.data);
+    setUserData(response.data);
+  })();
+  const [userData, setUserData] = useState(null);
 
-	/*
+  /*
 	useEffect(() => {
 		(async () => {
 			const data = await getProfile();
@@ -33,11 +30,8 @@ const Profile = () => {
 	}, [userData]);
 	console.log(userData);
 	*/
-	
 
-	
-	
-	/*
+  /*
 	const userData = {
 		image: defaultImage,
 		name: "기연",
@@ -48,31 +42,30 @@ const Profile = () => {
 		friendsList: ["경민", "태연", "주은", "소린", "기연"]
 	}
 	*/
-	
-	let userInfo
-	let userFriends
-	if (userData) {
-		userInfo  = {
-			image: userData.image,
-			name: userData.name,
-			bio: userData.bio,
-			age: userData.age,
-			gender: userData.gender,
-			birth: userData.birth,
-		}
 
-		userFriends = userData.friendsList;
-	}
-	
-	
-	return(
-		<div>
-				<ProfileWrap>
-					<UserInfo userInfo={userInfo}></UserInfo>
-					<Friends list={userFriends}></Friends>
-				</ProfileWrap>
-		</div>
-	);
-}
+  let userInfo;
+  let userFriends;
+  if (userData) {
+    userInfo = {
+      image: userData.image,
+      name: userData.name,
+      bio: userData.bio,
+      age: userData.age,
+      gender: userData.gender,
+      birth: userData.birth,
+    };
+
+    userFriends = userData.friendsList;
+  }
+
+  return (
+    <div>
+      <ProfileWrap>
+        <UserInfo userInfo={userInfo}></UserInfo>
+        <Friends list={userFriends}></Friends>
+      </ProfileWrap>
+    </div>
+  );
+};
 
 export default withRouter(Profile);
