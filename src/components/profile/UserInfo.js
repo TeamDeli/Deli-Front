@@ -52,7 +52,6 @@ const ButtonWrap = Styled.a`
 	}
 `;
 
-
 const UserInfo = ({ userInfo }) => {
 	try {
 		const {
@@ -88,7 +87,6 @@ const UserInfo = ({ userInfo }) => {
 				</ButtonWrap>			
 			</div>
 		);
-
 	} catch (err) {
 		console.error(err);
 	}

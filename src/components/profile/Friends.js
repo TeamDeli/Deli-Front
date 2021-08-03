@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Styled from 'styled-components';
 
 const FriendsWrap = Styled.div`
@@ -78,7 +78,9 @@ const FriendsWrap = Styled.div`
 
 const Friends = ({ list }) => {
   const [userName, setUserName] = useState("");
+  //const [friendsList, setFriendsList] = useState(list);
   const [friendsList, setFriendsList] = useState(list);
+  useEffect(()=> {setFriendsList(list)}, [list]);
   let changedList = []
   function isUserName(userName) {
     if (
@@ -108,6 +110,7 @@ const Friends = ({ list }) => {
     isUserName(userName);
   };
 
+  //a href -> router로 변경 
   return(
     <FriendsWrap>
       <a 

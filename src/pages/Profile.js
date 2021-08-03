@@ -3,7 +3,6 @@ import Styled from "styled-components";
 import UserInfo from '../components/profile/UserInfo';
 import Friends from '../components/profile/Friends';
 import { getProfile } from '../lib/api';
-import axios from 'axios';
 import { withRouter } from 'react-router';
 import defaultImage from '../user.svg'
 
@@ -14,28 +13,16 @@ const ProfileWrap = Styled.div`
 `;
 
 const Profile = () => {
-	(async () => {
-		const response = await axios.get(
-			'https://localhost:4000/profile'
-		);
-		console.log(response.data);
-		setUserData(response.data);
-	})();
-	const [userData, setUserData] = useState(null);
-	
 
-	/*
+	const [userData, setUserData] = useState({});
+
+	//json-server로 연결해서 userData 가져오기	
 	useEffect(() => {
 		(async () => {
 			const data = await getProfile();
 			setUserData(data);
 		})();
-	}, [userData]);
-	console.log(userData);
-	*/
-	
-
-	
+	},[]);
 	
 	/*
 	const userData = {
@@ -60,10 +47,8 @@ const Profile = () => {
 			gender: userData.gender,
 			birth: userData.birth,
 		}
-
 		userFriends = userData.friendsList;
 	}
-	
 	
 	return(
 		<div>
