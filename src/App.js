@@ -1,5 +1,4 @@
 import React from "react";
-//import Styled from 'styled-components';
 import AddFriends from "./pages/AddFriends";
 import Test from "./pages/Test";
 import "./App.css";
