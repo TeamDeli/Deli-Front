@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import Styled from "styled-components";
 import UserInfo from "../components/friends/UserInfo";
 import Friends from "../components/friends/Friends";
-import WishTest from "../components/friends/WishTest";
 import defaultImage from "../user.svg";
+//merge후 상품Container로 바꿀 예정.
+import WishTest from "../components/friends/wish/WishTest";
 
 const TestWrap = Styled.div`
   display:flex;
