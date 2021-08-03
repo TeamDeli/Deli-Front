@@ -63,7 +63,7 @@ const UserInfo = ({ userInfo }) => {
 			birth
 		} = userInfo;
 
-		//a href 링크 수정 필요
+		//a href 변경
 		return (
 			<div>
 				<UserInfoWrap>

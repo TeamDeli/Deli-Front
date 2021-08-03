@@ -92,7 +92,6 @@ const Friends = ({ list }) => {
     else {
       setFriendsList(changedList);
     }
-
   }
 
   useCallback(() => { 
@@ -110,7 +109,7 @@ const Friends = ({ list }) => {
     isUserName(userName);
   };
 
-  //a href -> router로 변경 
+  //a href 변경 
   return(
     <FriendsWrap>
       <a 
