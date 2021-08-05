@@ -2,6 +2,7 @@ import React, { useCallback, useState } from "react";
 import Styled from "styled-components";
 import ProductReco from "./ProductReco";
 import { Component } from "react";
+import productImg from "../bingsu.jpeg";
 
 class WishTest extends Component {
   constructor(props) {
@@ -17,17 +18,17 @@ class WishTest extends Component {
       pro1: {
         title1: "상품1",
         sub1: "상품1 정보",
-        pic1: "../bingsu.jpeg",
+        pic1: productImg,
       },
       pro2: {
         title2: "상품2",
         sub2: "상품2 정보",
-        pic2: "../bingsu.jpeg",
+        pic2: productImg,
       },
       pro3: {
         title3: "상품3",
         sub3: "상품3 정보",
-        pic3: "../bingsu.jpeg",
+        pic3: productImg,
       },
     };
   }

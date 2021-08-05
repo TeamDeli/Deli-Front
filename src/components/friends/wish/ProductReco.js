@@ -87,10 +87,11 @@ const RecoWrap = styled.div`
 
 class ProductReco extends Component {
   render() {
+    console.log(this.props.pic1);
     return (
       <RecoWrap>
         <h2>비슷한 상품</h2>
-        <div class="similar_products">
+        <div className="similar_products">
           <div>
             <img
               src={this.props.pic1}
