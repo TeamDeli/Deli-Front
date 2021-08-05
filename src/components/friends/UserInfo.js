@@ -53,7 +53,6 @@ const ButtonWrap = Styled.a`
 `;
 
 const UserInfo = ({ userInfo }) => {
-  console.log("userInfo");
   try {
     const { image, name, bio, age, gender, birth } = userInfo;
 
@@ -63,7 +62,7 @@ const UserInfo = ({ userInfo }) => {
         <UserInfoWrap>
           <img className="userImage" src={image} alt="userImage" />
           <div className="userInfo">
-            <h1> 이름: {name} </h1>
+            <h1> {name} </h1>
             <h2> 소개: {bio} </h2>
             <h2> 나이: {age} </h2>
             <h2> 성별: {gender} </h2>

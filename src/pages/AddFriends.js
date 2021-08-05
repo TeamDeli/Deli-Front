@@ -13,7 +13,6 @@ const AddFriendsWrap = Styled.div`
 `;
 
 const AddFriends = () => {
-  console.log("AddFriends");
   // const [userData, setUserData] = useState(null);
   //const [_wishList, setWishList] = useState(null);
   const userData = {

@@ -121,7 +121,8 @@ const Friends = ({ list }) => {
         </form>
       </div>
       <div className="scrollView">
-        {friendsList && friendsList.map((friend, i) => <p id={i}>{friend}</p>)}
+        {friendsList &&
+          friendsList.map((friend, index) => <p key={index}>{friend}</p>)}
       </div>
     </FriendsWrap>
   );

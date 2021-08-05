@@ -16,7 +16,6 @@ const WishWrap = styled.div`
 `;
 const WishList = (props) => {
   const { friendName, wishList } = props;
-  console.log("props:", props);
   return (
     <WishWrap>
       <h2>{friendName}님이 좋아하신 상품입니다.</h2>
@@ -26,7 +25,7 @@ const WishList = (props) => {
         <span className="wishContainer">
           {wishList.map((product, index) => {
             return (
-              <div className="productContainer" id={index}>
+              <div className="productContainer" key={index}>
                 <img
                   className="productImage"
                   src={product.img}
