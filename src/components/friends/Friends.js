@@ -64,7 +64,7 @@ const FriendsWrap = Styled.div`
   .scrollView {
     overflow: auto;
     width: 410px;
-    height: 150px;
+    height: 300px;
     background: #FDAE82;
   }
 
