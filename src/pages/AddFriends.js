@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import Styled from "styled-components";
 import UserInfo from "../components/profile/UserInfo";
 import Friends from "../components/profile/Friends";
-import { getProfile } from "../lib/api";
-import axios from "axios";
-import { withRouter } from "react-router";
 import defaultImage from "../user.svg";
+import WishList from "../components/friends/WishList";
+import productImg from "../components/friends/bingsu.jpeg";
 
 const AddFriendsWrap = Styled.div`
   display:flex;
@@ -14,24 +13,10 @@ const AddFriendsWrap = Styled.div`
 `;
 
 const AddFriends = () => {
-  //   (async () => {
-  //     const response = await axios.get("https://localhost:4000/profile");
-  //     console.log(response.data);
-  //     setUserData(response.data);
-  //   })();
-  const [userData, setUserData] = useState(null);
-
-  /*
-	useEffect(() => {
-		(async () => {
-			const data = await getProfile();
-			setUserData(data);
-		})();
-	}, [userData]);
-	console.log(userData);
-	*/
-
-  setUserData({
+  console.log("AddFriends");
+  // const [userData, setUserData] = useState(null);
+  //const [_wishList, setWishList] = useState(null);
+  const userData = {
     image: defaultImage,
     name: "기연",
     bio: "🔥🔥🔥",
@@ -39,7 +24,13 @@ const AddFriends = () => {
     gender: "여자", //나중에 boolean으로 바꾸기
     birth: "98.03.25",
     friendsList: ["경민", "태연", "주은", "소린", "기연"],
-  });
+  };
+
+  let _wishList = [
+    { img: productImg, title: "상품이름1" },
+    { img: productImg, title: "상품이름2" },
+    { img: productImg, title: "상품이름3" },
+  ];
 
   let userInfo;
   let userFriends;
@@ -57,13 +48,14 @@ const AddFriends = () => {
   }
 
   return (
-    <div>
-      <AddFriendsWrap>
+    <AddFriendsWrap>
+      <Friends list={userFriends}></Friends>
+      <div>
         <UserInfo userInfo={userInfo}></UserInfo>
-        <Friends list={userFriends}></Friends>
-      </AddFriendsWrap>
-    </div>
+        <WishList friendName={userInfo.name} wishList={_wishList}></WishList>
+      </div>
+    </AddFriendsWrap>
   );
 };
 
-export default withRouter(AddFriends);
+export default AddFriends;

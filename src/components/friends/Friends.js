@@ -106,7 +106,7 @@ const Friends = ({ list }) => {
   return (
     <FriendsWrap>
       <a className="friends" href="localhost:3000">
-        친구
+        친구 찾기
       </a>
       <div className="search">
         <form onSubmit={handleSubmit}>

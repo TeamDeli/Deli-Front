@@ -17,7 +17,7 @@ const UserInfoWrap = Styled.div`
 
 	.userInfo {
 		h2 {
-			margin-bottom: .2rem;
+			margin-bottom: .2rem; 
 		}
 	}
 `;
@@ -53,6 +53,7 @@ const ButtonWrap = Styled.a`
 `;
 
 const UserInfo = ({ userInfo }) => {
+  console.log("userInfo");
   try {
     const { image, name, bio, age, gender, birth } = userInfo;
 
