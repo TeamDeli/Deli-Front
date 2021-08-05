@@ -7,7 +7,7 @@ const WishList = (props) => {
   console.log("props:", props);
   return (
     <WishWrap>
-      <h2>{friendName}이 좋아하신 상품입니다.</h2>
+      <h2>{friendName}님이 좋아하신 상품입니다.</h2>
       {wishList.length === 0 ? (
         <h3>no items..</h3>
       ) : (
