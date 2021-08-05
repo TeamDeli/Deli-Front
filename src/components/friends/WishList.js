@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import React from "react";
-import "./WishList.css";
 
 const WishWrap = styled.div`
   h2 {
