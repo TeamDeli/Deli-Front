@@ -5,6 +5,7 @@ const FriendsWrap = Styled.div`
   display:flex;
   flex-direction:column;
   margin-top: 160px;
+  margin-left: 50px; /*수정부탁*/
 
   .friends {
     font-size: 30px;
@@ -64,7 +65,7 @@ const FriendsWrap = Styled.div`
   .scrollView {
     overflow: auto;
     width: 410px;
-    height: 300px;
+    height: 500px;
     background: #FDAE82;
   }
 

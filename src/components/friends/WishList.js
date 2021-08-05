@@ -1,7 +1,20 @@
 import styled from "styled-components";
 import React from "react";
+import "./WishList.css";
 
-const WishWrap = styled.div``;
+const WishWrap = styled.div`
+  h2 {
+    margin-top: 50px;
+    padding: 20px;
+  }
+  .wishContainer {
+    display: flex;
+    align-items: center;
+  }
+  h3 {
+    text-align: center;
+  }
+`;
 const WishList = (props) => {
   const { friendName, wishList } = props;
   console.log("props:", props);
@@ -11,21 +24,22 @@ const WishList = (props) => {
       {wishList.length === 0 ? (
         <h3>no items..</h3>
       ) : (
-        wishList.map((product) => {
-          return (
-            <span className="wishContainer">
-              <div className="productContainer">
+        <span className="wishContainer">
+          {wishList.map((product, index) => {
+            return (
+              <div className="productContainer" id={index}>
                 <img
+                  className="productImage"
                   src={product.img}
                   alt={product.title}
                   width="200px"
                   height="200px"
                 ></img>
-                <h3>{wishList.title}</h3>
+                <h3>{product.title}</h3>
               </div>
-            </span>
-          );
-        })
+            );
+          })}
+        </span>
       )}
     </WishWrap>
   );

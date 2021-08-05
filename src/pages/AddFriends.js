@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Styled from "styled-components";
-import UserInfo from "../components/profile/UserInfo";
-import Friends from "../components/profile/Friends";
+import UserInfo from "../components/friends/UserInfo";
+import Friends from "../components/friends/Friends";
 import defaultImage from "../user.svg";
 import WishList from "../components/friends/WishList";
 import productImg from "../components/friends/bingsu.jpeg";
@@ -23,7 +23,21 @@ const AddFriends = () => {
     age: 24,
     gender: "여자", //나중에 boolean으로 바꾸기
     birth: "98.03.25",
-    friendsList: ["경민", "태연", "주은", "소린", "기연"],
+    friendsList: [
+      "경민",
+      "태연",
+      "주은",
+      "소린",
+      "기연",
+      "친구1",
+      "친구2",
+      "친구3",
+      "친구4",
+      "친구1",
+      "친구2",
+      "친구3",
+      "친구4",
+    ],
   };
 
   let _wishList = [
