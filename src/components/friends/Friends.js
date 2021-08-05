@@ -1,5 +1,5 @@
-import React, { useCallback, useState } from 'react';
-import Styled from 'styled-components';
+import React, { useCallback, useState } from "react";
+import Styled from "styled-components";
 
 const FriendsWrap = Styled.div`
   display:flex;
@@ -79,25 +79,20 @@ const FriendsWrap = Styled.div`
 const Friends = ({ list }) => {
   const [userName, setUserName] = useState("");
   const [friendsList, setFriendsList] = useState(list);
-  let changedList = []
+  let changedList = [];
   function isUserName(userName) {
-    if (
-      (friendsList) && (friendsList.includes(userName))
-    ) {
+    if (friendsList && friendsList.includes(userName)) {
       changedList.push(userName);
       setFriendsList(changedList);
-    }
-    else {
+    } else {
       setFriendsList(changedList);
     }
-
   }
 
-  useCallback(() => { 
+  useCallback(() => {
     isUserName(userName);
   }, [friendsList]);
 
-  
   const handleChange = (event) => {
     setUserName(event.target.value);
     setFriendsList(list);
@@ -108,11 +103,9 @@ const Friends = ({ list }) => {
     isUserName(userName);
   };
 
-  return(
+  return (
     <FriendsWrap>
-      <a 
-      className="friends"
-      href="localhost:3000">
+      <a className="friends" href="localhost:3000">
         친구
       </a>
       <div className="search">
@@ -124,15 +117,13 @@ const Friends = ({ list }) => {
             onChange={handleChange}
           />
           <button className="buttonClass">찾기</button>
-          </form>
+        </form>
       </div>
       <div className="scrollView">
-        {friendsList && friendsList.map((friend) => (
-          <p>{friend}</p>
-          ))}
+        {friendsList && friendsList.map((friend, i) => <p id={i}>{friend}</p>)}
       </div>
     </FriendsWrap>
   );
-}
+};
 
 export default Friends;
