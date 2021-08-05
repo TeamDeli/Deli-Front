@@ -35,20 +35,19 @@ function Calendar() {
   const [modalOpen, setModalOpen] = useState(false);
   const [removeModalOpen, removeSetModalOpen] = useState(false);
   const calendarRef = useRef(null);
-  let newCalendar=new FullCalendar;
+  let newCalendar = new FullCalendar;
   const onEventAdded = (event) => {
     let calendarApi = calendarRef.current.getApi();
     console.log(calendarApi);
     calendarApi.addEvent(event);
   };
 
-/*  const onEventDelet = (event) => {
-    return event;
-
-  }; */
+  /*  const onEventDelet = (event) => {
+      return event;
+    }; */
   return (
 
-    <div> 
+    <div>
       <div>
         <RemoveEventModal
           isOpen={removeModalOpen}
@@ -56,7 +55,7 @@ function Calendar() {
             removeSetModalOpen(false);
           }
           }
-          onRemove={()=>{
+          onRemove={() => {
             removeSetModalOpen(false);
           }
           }
@@ -75,12 +74,12 @@ function Calendar() {
           contentHeight={600}
           dateClick={(e) => console.log(e.dateStr)}
           eventClick={(e) => {
-           /* removeSetModalOpen(true); //삭제하겠습니까? 모달창 열고 삭제 버튼 누를 때 이벤트 삭제하는 부분
-            onEventDelet(e);
-            console.log(e);
-            console.log(e.event);
-            rrmove.EventApi=e;
-            console.log(rrmove.EventApi)*/
+            /* removeSetModalOpen(true); //삭제하겠습니까? 모달창 열고 삭제 버튼 누를 때 이벤트 삭제하는 부분
+             onEventDelet(e);
+             console.log(e);
+             console.log(e.event);
+             rrmove.EventApi=e;
+             console.log(rrmove.EventApi)*/
             e.event.remove();
           }}
         />
