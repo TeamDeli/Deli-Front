@@ -2,10 +2,11 @@ import React, { useState } from "react"; //아직 구현을 못한 부분...
 import Modal from "react-modal";
 import Datetime from "react-datetime";
 import moment from "moment";
-function FriendEvnet({ isOpen, onClose, onEventAdded, oncancle }) {
+function FriendEvnet({ isOpen, onClose, onEventAdded }) {
   const [title, setTitle] = useState("");
   const [start, setStart] = useState(new Date());
   const [end, setEnd] = useState(new Date());
+  
   const onSubmit = (event) => {
     event.preventDefault();
     onEventAdded({
@@ -15,9 +16,11 @@ function FriendEvnet({ isOpen, onClose, onEventAdded, oncancle }) {
     });
     onClose();
   };
-  const onCancle = () => {
+
+  const onCancel = () => {
     onClose();
   };
+
   return (
     <Modal isOpen={isOpen} onRequestClose={onClose}>
       <form onSubmit={onSubmit}>
@@ -37,7 +40,7 @@ function FriendEvnet({ isOpen, onClose, onEventAdded, oncancle }) {
       </form>
       <div></div>
       <div>
-        <button onClick={() => onCancle()}>close</button>
+        <button onClick={() => onCancel()}>close</button>
       </div>
     </Modal>
   );

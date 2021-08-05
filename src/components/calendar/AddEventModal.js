@@ -93,7 +93,7 @@ const ModalStyles=
     },
 };
 
-function AddEventModal({isOpen,onClose,onEventAdded,oncancle} ){
+function AddEventModal( {isOpen,onClose,onEventAdded} ) {
   const [title,setTitle]=useState("");
   const [start,setStart]=useState(new Date());
   const [end,setEnd]=useState(new Date());
@@ -106,20 +106,24 @@ function AddEventModal({isOpen,onClose,onEventAdded,oncancle} ){
       })
       onClose();
     }
-    const onCancle=()=>{
+    const onCancel=()=>{
       onClose();
     }
 
     return(
       <ModalBox>
         <ModalWrapper>
-          <Modal isOpen={isOpen} onRequestClose={onClose} style={ModalStyles}>
-            <CancelBtnWrapper><CancelBtn onClick={()=>onCancle()}><AiOutlineClose /></CancelBtn></CancelBtnWrapper>
+          <Modal isOpen={isOpen} onRequestClose={onClose} style={ModalStyles}  ariaHideApp={false}>
+            <CancelBtnWrapper>
+              <CancelBtn onClick={ ()=>onCancel() }>
+              <AiOutlineClose/>
+              </CancelBtn>
+            </CancelBtnWrapper>
           <form onSubmit={onSubmit}>
-            <Title>이벤트 추가 <FcCheckmark/></Title>
+            <Title> 이벤트 추가 <FcCheckmark/></Title>
             <InputLabel placeholder="Title" value={title} onChange={e => setTitle(e.target.value)} />
             <DateWrapper>            
-              <Datetime ClassName="datetime" value={start} onChange={date=>setStart(date._d)} />
+              <Datetime ClassName="datetime" value={start} onChange={date=>setStart(date._d)} /> 
               <Datetime value={end} onChange={date=>setEnd(date._d)} />
             </ DateWrapper>
             <BtnWrapper><AddBtn>추가하기</AddBtn></BtnWrapper>
@@ -129,4 +133,4 @@ function AddEventModal({isOpen,onClose,onEventAdded,oncancle} ){
       </ModalBox>
     )
 }
-export {AddEventModal}
+export { AddEventModal }
