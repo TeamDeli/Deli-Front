@@ -1,5 +1,5 @@
 import "../Calendar.css";
-import FullCalendar from "@fullcalendar/react";
+import FullCalendar, { CalendarContent, elementClosest, EventApi, EventSourceApi, getRelevantEvents } from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import InteractionPlugin from "@fullcalendar/interaction";
@@ -8,6 +8,7 @@ import { AddEventModal } from "../components/calendar/AddEventModal";
 import { RemoveEventModal } from "../components/calendar/RemoveEventModal";
 import styled from "styled-components";
 import { FiEdit } from "react-icons/fi";
+import { removeElement } from '@fullcalendar/core';
 
 const events1 = [
   {
@@ -33,71 +34,71 @@ const Wrapper = styled.div`
 function Calendar() {
   const [modalOpen, setModalOpen] = useState(false);
   const [removeModalOpen, removeSetModalOpen] = useState(false);
-  var [number, setNumber] = useState(new FullCalendar());
   const calendarRef = useRef(null);
+  let newCalendar=new FullCalendar;
   const onEventAdded = (event) => {
     let calendarApi = calendarRef.current.getApi();
     console.log(calendarApi);
     calendarApi.addEvent(event);
   };
 
-  return (
-    <cellWrapper>
-      <calendarWrapper>
-        <div>
-          <RemoveEventModal
-            isOpen={removeModalOpen}
-            onClose={() => {
-              removeSetModalOpen(false);
-              number = 1;
-            }}
-            onRemove={() => {
-              removeSetModalOpen(false);
-            }}
-          ></RemoveEventModal>
-        </div>
+/*  const onEventDelet = (event) => {
+    return event;
 
-        <div style={{ position: "relative", zIndex: 0 }}>
-          <FullCalendar
-            ref={calendarRef}
-            plugins={[dayGridPlugin, timeGridPlugin, InteractionPlugin]}
-            initialView="dayGridMonth"
-            hearToolbar={{
-              center: "dayGridMonth,timeGridWeek,timeGridDay new",
-            }}
-            customButtons={{
-              myCustomButton: {
-                text: "nasd",
-                click: () => console.log("new evnet"),
-              },
-            }}
-            events={events1}
-            contentHeight={600}
-            button
-            noewIndicator
-            dateClick={(e) => console.log(e.dateStr)}
-            eventClick={(e) => {
-              /*removeSetModalOpen(true); //삭제하겠습니까? 모달창 열고 삭제 버튼 누를 때 이벤트 삭제하는 부분
-               onEventremove(e.event);*/
-              e.event.remove();
-            }}
-          />
-        </div>
-        <div>
-          <AddEventModal
-            isOpen={modalOpen}
-            onClose={() => setModalOpen(false)}
-            oncancel={() => setModalOpen(false)}
-            onEventAdded={(event) => onEventAdded(event)}
-          ></AddEventModal>
-        </div>
-        <Wrapper>
-          <AddBtn onClick={() => setModalOpen(true)}>
-            <FiEdit />
-          </AddBtn>
-        </Wrapper>
-      </calendarWrapper>
-    </cellWrapper>
+  }; */
+  return (
+
+    <div> 
+      <div>
+        <RemoveEventModal
+          isOpen={removeModalOpen}
+          onClose={() => {
+            removeSetModalOpen(false);
+          }
+          }
+          onRemove={()=>{
+            removeSetModalOpen(false);
+          }
+          }
+        ></RemoveEventModal>
+      </div>
+
+      <div style={{ position: "relative", zIndex: 0 }}>
+        <FullCalendar
+          ref={calendarRef}
+          plugins={[dayGridPlugin, timeGridPlugin, InteractionPlugin]}
+          initialView="dayGridMonth"
+          headerToolbar={{
+            center: "dayGridMonth,timeGridWeek,timeGridDay",
+          }}
+          events={events1}
+          contentHeight={600}
+          dateClick={(e) => console.log(e.dateStr)}
+          eventClick={(e) => {
+           /* removeSetModalOpen(true); //삭제하겠습니까? 모달창 열고 삭제 버튼 누를 때 이벤트 삭제하는 부분
+            onEventDelet(e);
+            console.log(e);
+            console.log(e.event);
+            rrmove.EventApi=e;
+            console.log(rrmove.EventApi)*/
+            e.event.remove();
+          }}
+        />
+      </div>
+      <div>
+        <AddEventModal
+          isOpen={modalOpen}
+          onClose={() => setModalOpen(false)}
+          onEventAdded={(event) => onEventAdded(event)}
+        ></AddEventModal>
+      </div>
+      <Wrapper>
+        <AddBtn onClick={() => setModalOpen(true)}>
+          <FiEdit />
+        </AddBtn>
+      </Wrapper>
+    </div>
+
   );
 }
 export default Calendar;
