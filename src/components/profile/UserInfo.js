@@ -52,7 +52,6 @@ const ButtonWrap = Styled.a`
 	}
 `;
 
-
 const UserInfo = ({ userInfo }) => {
 	try {
 		const {
@@ -64,7 +63,7 @@ const UserInfo = ({ userInfo }) => {
 			birth
 		} = userInfo;
 
-		//a href 링크 수정 필요
+		//a href 변경
 		return (
 			<div>
 				<UserInfoWrap>
@@ -88,7 +87,6 @@ const UserInfo = ({ userInfo }) => {
 				</ButtonWrap>			
 			</div>
 		);
-
 	} catch (err) {
 		console.error(err);
 	}
