@@ -1,4 +1,4 @@
-import React, { useState } from "react"; //아직 구현을 못한 부분...
+import React, { useState } from "react"; 
 import Modal from "react-modal";
 import Datetime from "react-datetime";
 import moment from "moment";
@@ -40,7 +40,7 @@ function FriendEvnet({ isOpen, onClose, onEventAdded }) {
       </form>
       <div></div>
       <div>
-        <button onClick={() => onCancel()}>close</button>
+        <button onClick={() => onCancel()}>Close</button>
       </div>
     </Modal>
   );
