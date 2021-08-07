@@ -1,7 +1,7 @@
 import React from "react";
 import AddFriends from "./pages/AddFriends";
 import Profile from "./pages/Profile";
-import Calendar from './pages/Calendar';
+import Calendar from "./pages/Calendar";
 import NavBar from "./components/NavBar/NavBar";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -18,9 +18,8 @@ function App() {
           exact
           path="/profile"
           component={() => <Profile></Profile>}
-        <Route path="/addFriends" exact component={AddFriends}></Route>
         ></Route>
-
+        <Route path="/addFriends" exact component={AddFriends}></Route>
       </Switch>
     </Router>
   );
