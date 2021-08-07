@@ -1,10 +1,10 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Styled from 'styled-components';
 
 const FriendsWrap = Styled.div`
   display:flex;
   flex-direction:column;
-  margin-top: 160px;
+  margin-top: 90px;
 
   .friends {
     font-size: 30px;
@@ -21,7 +21,7 @@ const FriendsWrap = Styled.div`
 
     input {
       width: 300px;
-      height: 30px;
+      height: 40px;
       background-color:#fffff;
       border: 2px solid #FD6F22;
       color: black;
@@ -72,13 +72,16 @@ const FriendsWrap = Styled.div`
     font-size: 20px;
     font-weight: bold;
     color: #ffffff;
+    margin-top: 10px;
     margin-left: 15px;
   }
 `;
 
 const Friends = ({ list }) => {
   const [userName, setUserName] = useState("");
+  //const [friendsList, setFriendsList] = useState(list);
   const [friendsList, setFriendsList] = useState(list);
+  useEffect(()=> {setFriendsList(list)}, [list]);
   let changedList = []
   function isUserName(userName) {
     if (
@@ -90,7 +93,6 @@ const Friends = ({ list }) => {
     else {
       setFriendsList(changedList);
     }
-
   }
 
   useCallback(() => { 
@@ -108,6 +110,7 @@ const Friends = ({ list }) => {
     isUserName(userName);
   };
 
+  //a href 변경 
   return(
     <FriendsWrap>
       <a 
