@@ -3,9 +3,19 @@ import React from "react";
 
 import Product from "./pages/Product";
 import './App.css';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
-  return <Product></Product>;
+  return (
+    <Router>
+      <Switch>
+        <Route
+          exact
+          path="/product"
+          component={() => <Product></Product>}
+        ></Route>
+      </Switch>
+    </Router>
+  );
 }
 export default App;
