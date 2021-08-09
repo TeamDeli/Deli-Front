@@ -1,13 +1,12 @@
 import React from "react";
 import AddFriends from "./pages/AddFriends";
 import Profile from "./pages/Profile";
-import Test from "./pages/Test";
-import "./App.css";
-import Calendar from './pages/Calendar';
-import "antd/dist/antd.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Calendar from "./pages/Calendar";
 import NavBar from "./components/NavBar/NavBar";
 import LandingPage from "./pages/LandingPage/LandingPage";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.css";
+import "antd/dist/antd.css";
 
 function App() {
   return (
@@ -20,6 +19,7 @@ function App() {
           path="/profile"
           component={() => <Profile></Profile>}
         ></Route>
+        <Route path="/addFriends" exact component={AddFriends}></Route>
       </Switch>
     </Router>
   );
