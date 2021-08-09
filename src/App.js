@@ -1,4 +1,5 @@
 import React from "react";
+import Product from "./pages/Product";
 import AddFriends from "./pages/AddFriends";
 import Profile from "./pages/Profile";
 import Calendar from "./pages/Calendar";
@@ -20,6 +21,11 @@ function App() {
           component={() => <Profile></Profile>}
         ></Route>
         <Route path="/addFriends" exact component={AddFriends}></Route>
+        <Route
+          exact
+          path="/product"
+          component={() => <Product></Product>}
+        ></Route>
       </Switch>
     </Router>
   );

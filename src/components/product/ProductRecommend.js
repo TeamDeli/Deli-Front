@@ -33,4 +33,5 @@ class ProductRecommend extends Component {
     }
   }
 
-  export default ProductRecommend;
+export default ProductRecommend;
+
