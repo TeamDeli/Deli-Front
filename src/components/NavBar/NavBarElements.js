@@ -1,0 +1,103 @@
+import styled from "styled-components";
+import { NavLink as Link } from "react-router-dom";
+import { FaBars } from "react-icons/fa";
+
+export const Nav = styled.nav`
+  background: #fff;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem calc((100vw - 1000px) / 2);
+  z-index: 10;
+`;
+
+export const NavLink = styled(Link)`
+  color: #000;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+  &.active {
+    color: #fd6f22;
+  }
+`;
+
+export const Search = styled.div`
+  right: 700px;
+`;
+
+export const SearchWrap = styled.div`
+  width: 350px;
+  height: 36px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: rgba(179, 191, 201, 0.15);
+  line-height: 33px;
+  padding-left: 37px;
+  padding-right: 37px;
+  border-radius: 19px;
+`;
+
+export const Input = styled.input`
+  color: #000;
+  width: 196px;
+  border: transparent;
+  font-size: 12px;
+  background: transparent;
+  outline: none;
+  &::placeholder {
+    color: #d1d8de;
+  }
+`;
+
+export const Bars = styled(FaBars)`
+  display: none;
+  color: #fff;
+  @media screen and (max-width: 768px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 75%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+`;
+
+export const NavMenu = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: -24px;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const NavBtn = styled.nav`
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const NavBtnLink = styled(Link)`
+  border-radius: 50px;
+  background: #fd6f22;
+  padding: 10px 22px;
+  color: rgb(34, 34, 34);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+    color: #010606;
+  }
+`;
+
