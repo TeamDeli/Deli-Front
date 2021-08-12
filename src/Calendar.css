@@ -3,11 +3,13 @@
   color: black;
   border: white;
 }
+
 .fc .fc-button-primary {
   background-color: white;
   color: black;
   border: white;
 }
+
 .form-control {
   color: black;
   background: white;
@@ -17,6 +19,7 @@
   font: -webkit-mini-control;
   font-weight: 500;
 }
+
 .fc .fc-toolbar-title {
   font-size: 1.75em;
   margin: 0;
@@ -39,12 +42,25 @@
   font-family: "Noto Sans KR";
 }
 
+.fc.fc-media-screen.fc-direction-ltr.fc-theme-standard {
+  width: 60%;
+}
+
 .fc .fc-daygrid-day-number {
   position: relative;
   z-index: 4;
   padding: 10px;
   font: icon;
 }
+
+element.style {
+  /* position: relative; */
+  display: flex;
+  display: f;
+  -index: 0;
+  justify-content: center;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -54,12 +70,6 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-:root {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .datetime {
