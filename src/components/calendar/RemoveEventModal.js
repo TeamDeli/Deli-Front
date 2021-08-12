@@ -1,15 +1,12 @@
 import React,{useState} from "react";
 import Modal from "react-modal"
 function RemoveEventModal( {isOpen,onClose,onRemove} ){
-//  const [renumber,resetNumber]=useState(0);
   const onCancel=()=>{
-//    resetNumber(1);
     onClose();
     }
 
   const onSubmit=(e)=>{
     e.preventDefault();
-//    resetNumber(2);
     onRemove();
     }
 
