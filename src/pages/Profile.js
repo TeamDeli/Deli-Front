@@ -48,11 +48,11 @@ const Profile = () => {
 	
 	return(
 		<div>
-				<ProfileWrap>
-					<UserInfo userInfo={userInfo}></UserInfo>
-					<Friends list={userFriends}></Friends>
-				</ProfileWrap>
-				<WishList friendName={userInfo.name} wishList={wishList}></WishList>
+			<ProfileWrap>
+				<UserInfo userInfo={userInfo}></UserInfo>
+				<Friends list={userFriends}></Friends>
+			</ProfileWrap>
+			<WishList friendName={userInfo.name} wishList={wishList}></WishList>
 		</div>
 	);
 }
