@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import Styled from "styled-components";
 import UserInfo from '../components/profile/UserInfo';
 import Friends from '../components/profile/Friends';
+import WishList from '../components/profile/Wishlist';
 import { getProfile } from '../lib/api';
 import { withRouter } from 'react-router';
-import defaultImage from '../user.svg'
+import productImg from "../components/friends/bingsu.jpeg";
 
 const ProfileWrap = Styled.div`
   display:flex;
@@ -49,6 +50,13 @@ const Profile = () => {
 		}
 		userFriends = userData.friendsList;
 	}
+
+	const wishList = [
+    { img: productImg, title: "상품이름1" },
+    { img: productImg, title: "상품이름2" },
+    { img: productImg, title: "상품이름3" },
+		{ img: productImg, title: "상품이름4" },
+  ];
 	
 	return(
 		<div>
@@ -56,6 +64,7 @@ const Profile = () => {
 					<UserInfo userInfo={userInfo}></UserInfo>
 					<Friends list={userFriends}></Friends>
 				</ProfileWrap>
+				<WishList friendName={userInfo.name} wishList={wishList}></WishList>
 		</div>
 	);
 }
