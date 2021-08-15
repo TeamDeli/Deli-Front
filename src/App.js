@@ -9,11 +9,17 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import "antd/dist/antd.css";
 
+
 function App() {
   return (
     <Router>
       <NavBar />
       <Switch>
+        <Route
+          exact
+          path="/calendar"
+          component={() => <Calendar></Calendar>}
+         ></Route>
         <Route path="/" exact component={LandingPage}></Route>
         <Route
           exact

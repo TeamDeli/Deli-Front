@@ -1,7 +1,6 @@
-import React, { useState } from "react"; //아직 구현을 못한 부분...
+import React, { useState } from "react";
 import Modal from "react-modal";
 import Datetime from "react-datetime";
-import moment from "moment";
 function FriendEvnet({ isOpen, onClose, onEventAdded }) {
   const [title, setTitle] = useState("");
   const [start, setStart] = useState(new Date());
@@ -33,14 +32,13 @@ function FriendEvnet({ isOpen, onClose, onEventAdded }) {
           <Datetime value={start} onChange={(date) => setStart(date._d)} />
         </div>
         <div>
-          <label>End Date</label>
           <Datetime value={end} onChange={(date) => setEnd(date._d)} />
         </div>
         <button>Add event</button>
       </form>
       <div></div>
       <div>
-        <button onClick={() => onCancel()}>close</button>
+        <button onClick={() => onCancel()}>Close</button>
       </div>
     </Modal>
   );

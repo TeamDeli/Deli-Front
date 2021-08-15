@@ -8,10 +8,11 @@ import {AiOutlineClose} from "react-icons/ai"
 import {FcCheckmark}from "react-icons/fc"
 
 const CancelBtn=styled.button`
-color: black;
+  color: black;
   background: white;
   border: white;
   font-size: xx-large;
+  cursor: pointer;
 `;
 
 const AddBtn=styled.button`
@@ -21,21 +22,16 @@ const AddBtn=styled.button`
   font-size: 25px;
   border-radius: 15px 40px / 80px 10px;
   font-family: 'Noto Sans KR';
-`;
+  cursor: pointer;
+}`;
 
-const ModalBox=styled.div`
-  hight:10rem;
-  width:60rem;
+const ModalBox=styled.div` 
   background:#fff;
   display:absolute;
   alignItem:"center";
+  padding:30px;
 `;
 
-/*const Label=styled.div`
-font-size:1rem;
-font-family:"nato-sans";
-`;
-*/
 const BtnWrapper=styled.div`
   display: flex;
   flex-direction: column-reverse;
@@ -46,6 +42,7 @@ const BtnWrapper=styled.div`
 const CancelBtnWrapper=styled.div`
   display:flex;
   justify-content:flex-end;
+}
 `;
 
 const Title=styled.div`
@@ -86,11 +83,15 @@ const ModalStyles=
   content:{
     margin:"auto",
     background:"#fff",
-    width:"35rem",
-    height:"35rem",
+    width:"25rem",
+    height:"25rem",
     alignItems:"center",
     border:"white",
-    },
+    overflow: "visible",
+  },
+  overlay:{
+    backgroundColor:"rgba(0,0,0,0.4)"
+  }
 };
 
 function AddEventModal( {isOpen,onClose,onEventAdded} ) {
@@ -106,6 +107,7 @@ function AddEventModal( {isOpen,onClose,onEventAdded} ) {
       })
       onClose();
     }
+    
     const onCancel=()=>{
       onClose();
     }
@@ -113,21 +115,21 @@ function AddEventModal( {isOpen,onClose,onEventAdded} ) {
     return(
       <ModalBox>
         <ModalWrapper>
-          <Modal isOpen={isOpen} onRequestClose={onClose} style={ModalStyles}  ariaHideApp={false}>
+          <Modal isOpen={isOpen} onRequestClose={onClose} style={ModalStyles} ariaHideApp={false}>
             <CancelBtnWrapper>
               <CancelBtn onClick={ ()=>onCancel() }>
               <AiOutlineClose/>
               </CancelBtn>
             </CancelBtnWrapper>
           <form onSubmit={onSubmit}>
-            <Title> 이벤트 추가 <FcCheckmark/></Title>
+            <Title> 이벤트 추가 <FcCheckmark/> </Title>
             <InputLabel placeholder="Title" value={title} onChange={e => setTitle(e.target.value)} />
             <DateWrapper>            
               <Datetime ClassName="datetime" value={start} onChange={date=>setStart(date._d)} /> 
-              <Datetime value={end} onChange={date=>setEnd(date._d)} />
+              <Datetime ClassName="datetime" value={end} onChange={(date) => setEnd(date._d)} />
             </ DateWrapper>
             <BtnWrapper><AddBtn>추가하기</AddBtn></BtnWrapper>
-            </form>     
+          </form>     
           </Modal>
         </ModalWrapper>
       </ModalBox>
