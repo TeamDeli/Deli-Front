@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Styled from "styled-components";
 import UserInfo from '../components/profile/UserInfo';
 import Friends from '../components/profile/Friends';
-import WishList from '../components/profile/Wishlist';
+import WishList from '../components/profile/WishList';
 import { getProfile } from '../lib/api';
 import { withRouter } from 'react-router';
 import productImg from "../components/friends/bingsu.jpeg";
@@ -24,18 +24,6 @@ const Profile = () => {
 			setUserData(data);
 		})();
 	},[]);
-	
-	/*
-	const userData = {
-		image: defaultImage,
-		name: "기연",
-		bio: "🔥🔥🔥",
-		age: 24,
-		gender: "여자", //나중에 boolean으로 바꾸기
-		birth: "98.03.25",
-		friendsList: ["경민", "태연", "주은", "소린", "기연"]
-	}
-	*/
 	
 	let userInfo
 	let userFriends
