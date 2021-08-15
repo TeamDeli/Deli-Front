@@ -38,13 +38,14 @@ const Profile = () => {
 		}
 		userFriends = userData.friendsList;
 	}
-
+	
+	
 	const wishList = [
     { img: productImg, title: "상품이름1" },
     { img: productImg, title: "상품이름2" },
     { img: productImg, title: "상품이름3" },
-		{ img: productImg, title: "상품이름4" },
-  ];
+		{ img: productImg, title: "상품이름4" }
+	];
 	
 	return(
 		<div>
