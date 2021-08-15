@@ -1,10 +1,11 @@
-import React, { useCallback, useState } from 'react';
-import Styled from 'styled-components';
+import React, { useCallback, useState } from "react";
+import Styled from "styled-components";
 
 const FriendsWrap = Styled.div`
   display:flex;
   flex-direction:column;
   margin-top: 160px;
+  margin-left: 50px; /*수정부탁*/
 
   .friends {
     font-size: 30px;
@@ -64,7 +65,7 @@ const FriendsWrap = Styled.div`
   .scrollView {
     overflow: auto;
     width: 410px;
-    height: 150px;
+    height: 500px;
     background: #FDAE82;
   }
 
@@ -79,25 +80,20 @@ const FriendsWrap = Styled.div`
 const Friends = ({ list }) => {
   const [userName, setUserName] = useState("");
   const [friendsList, setFriendsList] = useState(list);
-  let changedList = []
+  let changedList = [];
   function isUserName(userName) {
-    if (
-      (friendsList) && (friendsList.includes(userName))
-    ) {
+    if (friendsList && friendsList.includes(userName)) {
       changedList.push(userName);
       setFriendsList(changedList);
-    }
-    else {
+    } else {
       setFriendsList(changedList);
     }
-
   }
 
-  useCallback(() => { 
+  useCallback(() => {
     isUserName(userName);
   }, [friendsList]);
 
-  
   const handleChange = (event) => {
     setUserName(event.target.value);
     setFriendsList(list);
@@ -108,13 +104,9 @@ const Friends = ({ list }) => {
     isUserName(userName);
   };
 
-  return(
+  return (
     <FriendsWrap>
-      <a 
-      className="friends"
-      href="localhost:3000">
-        친구
-      </a>
+      <h1>친구 찾기</h1>
       <div className="search">
         <form onSubmit={handleSubmit}>
           <input
@@ -124,15 +116,14 @@ const Friends = ({ list }) => {
             onChange={handleChange}
           />
           <button className="buttonClass">찾기</button>
-          </form>
+        </form>
       </div>
       <div className="scrollView">
-        {friendsList && friendsList.map((friend) => (
-          <p>{friend}</p>
-          ))}
+        {friendsList &&
+          friendsList.map((friend, index) => <p key={index}>{friend}</p>)}
       </div>
     </FriendsWrap>
   );
-}
+};
 
 export default Friends;

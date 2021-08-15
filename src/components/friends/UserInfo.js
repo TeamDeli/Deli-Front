@@ -17,7 +17,7 @@ const UserInfoWrap = Styled.div`
 
 	.userInfo {
 		h2 {
-			margin-bottom: .2rem;
+			margin-bottom: .2rem; 
 		}
 	}
 `;
@@ -62,7 +62,7 @@ const UserInfo = ({ userInfo }) => {
         <UserInfoWrap>
           <img className="userImage" src={image} alt="userImage" />
           <div className="userInfo">
-            <h1> 이름: {name} </h1>
+            <h1> {name} </h1>
             <h2> 소개: {bio} </h2>
             <h2> 나이: {age} </h2>
             <h2> 성별: {gender} </h2>

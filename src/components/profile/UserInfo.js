@@ -4,20 +4,27 @@ import Styled from 'styled-components';
 const UserInfoWrap = Styled.div`
 	display: flex;
 	flex-direction: row;
-	margin-top: 140px;
+	margin-top: 70px;
 	margin-left: 100px;
 	justify-content:flex-start;
 
 	.userImage {
-		width: 180px;
-		height: 180px;
-		margin-top: 15px;
+		width: 220px;
+		height: 220px;
 		margin-right: 100px;
 	}
 
 	.userInfo {
+		margin-top: 20px;
+		h1 {
+			font-size: 33px;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
 		h2 {
-			margin-bottom: .2rem;
+			font-size: 25px;
+			font-weight: bold;
+			margin-bottom: 10px;
 		}
 	}
 `;
@@ -26,7 +33,7 @@ const ButtonWrap = Styled.a`
 	display: flex;
 	flex-direction: column;
 	margin-top: -60px;
-	margin-left: 65px;
+	margin-left: 85px;
 
 	.buttonClass {
 		font-size: 40px;
@@ -52,7 +59,6 @@ const ButtonWrap = Styled.a`
 	}
 `;
 
-
 const UserInfo = ({ userInfo }) => {
 	try {
 		const {
@@ -64,13 +70,13 @@ const UserInfo = ({ userInfo }) => {
 			birth
 		} = userInfo;
 
-		//a href 링크 수정 필요
+		//a href 변경
 		return (
 			<div>
 				<UserInfoWrap>
 				<img className="userImage" src={image} alt="userImage"/>
 				<div className="userInfo">  
-						<h1> 이름: {name} </h1>
+						<h1> {name} </h1>
 						<h2> 소개: {bio} </h2>
 						<h2> 나이: {age} </h2> 
 						<h2> 성별: {gender} </h2>
@@ -88,7 +94,6 @@ const UserInfo = ({ userInfo }) => {
 				</ButtonWrap>			
 			</div>
 		);
-
 	} catch (err) {
 		console.error(err);
 	}

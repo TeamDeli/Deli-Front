@@ -1,11 +1,14 @@
 import React from "react";
+import Product from "./pages/Product";
 import AddFriends from "./pages/AddFriends";
-import Test from "./pages/Test";
+import Profile from "./pages/Profile";
+import Calendar from "./pages/Calendar";
+import NavBar from "./components/NavBar/NavBar";
+import LandingPage from "./pages/LandingPage/LandingPage";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import Calendar from './pages/Calendar';
-import LandingPage from './pages/LandingPage/LandingPage'
-import NavBar from './components/NavBar/NavBar'
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "antd/dist/antd.css";
+
 
 function App() {
   return (
@@ -16,6 +19,18 @@ function App() {
           exact
           path="/calendar"
           component={() => <Calendar></Calendar>}
+         ></Route>
+        <Route path="/" exact component={LandingPage}></Route>
+        <Route
+          exact
+          path="/profile"
+          component={() => <Profile></Profile>}
+        ></Route>
+        <Route path="/addFriends" exact component={AddFriends}></Route>
+        <Route
+          exact
+          path="/product"
+          component={() => <Product></Product>}
         ></Route>
       </Switch>
     </Router>
