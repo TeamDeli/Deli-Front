@@ -23,6 +23,7 @@ const WishWrap = styled.div`
     margin-right: 100px;
   }
 `;
+
 const WishList = (props) => {
   const { friendName, wishList } = props;
   return (
