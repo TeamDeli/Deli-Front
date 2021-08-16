@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import Styled from "styled-components";
 import UserInfo from '../components/profile/UserInfo';
 import Friends from '../components/profile/Friends';
+import WishList from '../components/profile/WishList';
 import { getProfile } from '../lib/api';
 import { withRouter } from 'react-router';
-import defaultImage from '../user.svg'
+import productImg from "../components/friends/bingsu.jpeg";
 
 const ProfileWrap = Styled.div`
   display:flex;
@@ -24,18 +25,6 @@ const Profile = () => {
 		})();
 	},[]);
 	
-	/*
-	const userData = {
-		image: defaultImage,
-		name: "기연",
-		bio: "🔥🔥🔥",
-		age: 24,
-		gender: "여자", //나중에 boolean으로 바꾸기
-		birth: "98.03.25",
-		friendsList: ["경민", "태연", "주은", "소린", "기연"]
-	}
-	*/
-	
 	let userInfo
 	let userFriends
 	if (userData) {
@@ -49,13 +38,21 @@ const Profile = () => {
 		}
 		userFriends = userData.friendsList;
 	}
+
+	const wishList = [
+		{ img: productImg, title: "상품이름1"},
+		{ img: productImg, title: "상품이름2"},
+		{ img: productImg, title: "상품이름3"},
+		{ img: productImg, title: "상품이름4"}
+	];
 	
 	return(
 		<div>
-				<ProfileWrap>
-					<UserInfo userInfo={userInfo}></UserInfo>
-					<Friends list={userFriends}></Friends>
-				</ProfileWrap>
+			<ProfileWrap>
+				<UserInfo userInfo={userInfo}></UserInfo>
+				<Friends list={userFriends}></Friends>
+			</ProfileWrap>
+			<WishList friendName={userInfo.name} wishList={wishList}></WishList>
 		</div>
 	);
 }

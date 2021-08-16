@@ -115,7 +115,7 @@ const Friends = ({ list }) => {
     <FriendsWrap>
       <a 
       className="friends"
-      href="localhost:3000">
+      href="/addFriends">
         친구
       </a>
       <div className="search">

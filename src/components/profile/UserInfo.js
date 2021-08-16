@@ -86,7 +86,7 @@ const UserInfo = ({ userInfo }) => {
 				<ButtonWrap>
 					<a 
 					className="buttonClass" 
-					href="localhost:3000" 
+					href="/calendar" 
 					alt="" 
 					>
 						Calendar
