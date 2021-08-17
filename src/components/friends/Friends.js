@@ -4,7 +4,7 @@ import Styled from "styled-components";
 const FriendsWrap = Styled.div`
   display:flex;
   flex-direction:column;
-  margin-top: 160px;
+  margin-top: 100px;
   margin-left: 50px; /*수정부탁*/
 
   .friends {
@@ -67,6 +67,7 @@ const FriendsWrap = Styled.div`
     width: 410px;
     height: 500px;
     background: #FDAE82;
+    padding: 5px 5px 5px 5px;
   }
 
   p {
@@ -75,6 +76,9 @@ const FriendsWrap = Styled.div`
     color: #ffffff;
     margin-left: 15px;
   }
+  h1 {
+		font-weight: bold;
+	}
 `;
 
 const Friends = ({ list }) => {
