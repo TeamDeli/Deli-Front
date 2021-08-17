@@ -5,7 +5,7 @@ const FriendsWrap = Styled.div`
   display:flex;
   flex-direction:column;
   margin-top: 100px;
-  margin-left: 50px; /*수정부탁*/
+  margin-left: 50px;
 
   .friends {
     font-size: 30px;
@@ -16,13 +16,12 @@ const FriendsWrap = Styled.div`
 
   .search {
     display:flex;
-    flex-direction:row;
     margin-top: 10px;
     margin-bottom: 20px;
 
     input {
       width: 300px;
-      height: 30px;
+      height: 40px;
       background-color:#fffff;
       border: 2px solid #FD6F22;
       color: black;
@@ -65,15 +64,16 @@ const FriendsWrap = Styled.div`
   .scrollView {
     overflow: auto;
     width: 410px;
-    height: 500px;
+    height: 450px;
     background: #FDAE82;
-    padding: 5px 5px 5px 5px;
+    padding: 3px 3px 3px 3px;
   }
 
   p {
     font-size: 20px;
     font-weight: bold;
     color: #ffffff;
+    margin-top: 10px;
     margin-left: 15px;
   }
   h1 {

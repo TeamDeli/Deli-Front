@@ -3,22 +3,26 @@ import Styled from "styled-components";
 
 const UserInfoWrap = Styled.div`
 	display: flex;
-	margin-top: 140px;
+	margin-top: 70px;
 	margin-left: 100px;
 
 	.userImage {
-		width: 180px;
-		height: 180px;
-		margin: 0px 100px 10px 0px;
+		width: 200px;
+		height: 200px;
+		margin-right: 100px;
 	}
 
 	.userInfo {
-		margin-top: 10px;
+		margin-top: 20px;
 		h2 {
-			margin-bottom: .2rem; 
+			font-size: 25px;
+			font-weight: bold;
+			margin-bottom: 10px; 
 		}
 		h1 {
+			font-size: 33px;
 			font-weight: bold;
+			margin-bottom: 20px;
 		}
 	}
 `;
@@ -26,8 +30,8 @@ const UserInfoWrap = Styled.div`
 const ButtonWrap = Styled.a`
 	display: flex;
 	flex-direction: column;
-	margin-top: -10px;
-	margin-left: 65px;
+	margin-top: -60px;
+	margin-left: 85px;
 
 	.buttonClass {
 		font-size: 35px;
