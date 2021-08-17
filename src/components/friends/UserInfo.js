@@ -3,21 +3,22 @@ import Styled from "styled-components";
 
 const UserInfoWrap = Styled.div`
 	display: flex;
-	flex-direction: row;
 	margin-top: 140px;
 	margin-left: 100px;
-	justify-content:flex-start;
 
 	.userImage {
 		width: 180px;
 		height: 180px;
-		margin-top: 15px;
-		margin-right: 100px;
+		margin: 0px 100px 10px 0px;
 	}
 
 	.userInfo {
+		margin-top: 10px;
 		h2 {
 			margin-bottom: .2rem; 
+		}
+		h1 {
+			font-weight: bold;
 		}
 	}
 `;
@@ -25,7 +26,7 @@ const UserInfoWrap = Styled.div`
 const ButtonWrap = Styled.a`
 	display: flex;
 	flex-direction: column;
-	margin-top: -60px;
+	margin-top: -10px;
 	margin-left: 65px;
 
 	.buttonClass {
