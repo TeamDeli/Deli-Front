@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Col, Card, Row } from "antd";
+import { Col, Card, Row, Image } from "antd";
 import RadioBox from "./Sections/RadioBox";
 import RangeSlider from "./Sections/RangeSlider";
 import { gender, age } from "./Sections/Datas";
@@ -45,13 +45,14 @@ const LandingPage = () => {
 
   const renderCards = Products.map((product, index) => {
     return (
-      <Col lg={6} md={8} xs={24}>
+      <Col lg={6} md={8} xs={24} span={8}>
         <Card
           hoverable={true}
           key={index}
+          style={{ width: 300 }}
           cover={
             <a href={`/product/${product.id}`}>
-              <img alt="example" src={product.imageUrl} />
+              <Image width={300} src={product.imageUrl} />
             </a>
           }
         >
