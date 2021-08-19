@@ -79,7 +79,6 @@ const FriendsWrap = Styled.div`
 
 const Friends = ({ list }) => {
   const [userName, setUserName] = useState("");
-  //const [friendsList, setFriendsList] = useState(list);
   const [friendsList, setFriendsList] = useState(list);
   useEffect(()=> {setFriendsList(list)}, [list]);
   let changedList = []
@@ -110,7 +109,6 @@ const Friends = ({ list }) => {
     isUserName(userName);
   };
 
-  //a href 변경 
   return(
     <FriendsWrap>
       <a 

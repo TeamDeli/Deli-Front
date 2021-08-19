@@ -5,7 +5,7 @@ const WishWrap = styled.div`
   margin-top: 60px;
   margin-left: 250px;
   h1 {
-    margin-left:50px;
+    margin-left:20px;
     padding: 20px;
     font-weight: bold;
     font-size: 30px;
@@ -24,11 +24,10 @@ const WishWrap = styled.div`
   }
 `;
 
-const WishList = (props) => {
-  const { friendName, wishList } = props;
+const WishList = ({wishList}) => {
   return (
     <WishWrap>
-      <h1>{friendName}님이 좋아하신 상품입니다.</h1>
+      <h1>기연님이 좋아하신 상품입니다.</h1>
       {wishList.length === 0 ? (
         <h3>no items..</h3>
       ) : (
@@ -38,12 +37,12 @@ const WishList = (props) => {
               <div className="productContainer" key={index}>
                 <img
                   className="productImage"
-                  src={product.img}
-                  alt={product.title}
+                  src={product.imageUrl}
+                  alt={product.productname}
                   width="300px"
                   height="300px"
                 ></img>
-                <h3>{product.title}</h3>
+                <h3>{product.productname}</h3>
               </div>
             );
           })}
