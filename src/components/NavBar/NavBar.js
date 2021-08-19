@@ -31,11 +31,11 @@ const NavBar = () => (
         <NavLink to="/popular-gift" activeStyle>
           인기 선물
         </NavLink>
-        <NavLink to="/find-friend" activeStyle>
+        <NavLink to="/addFriends" activeStyle>
           친구 찾기
         </NavLink>
-        <NavLink to="/ranking" activeStyle>
-          랭킹
+        <NavLink to="/profile" activeStyle>
+          프로필
         </NavLink>
       </NavMenu>
       <NavBtn>
