@@ -37,7 +37,6 @@ const Profile = () => {
 		userWishList = userData.wishList;
 	}
 	console.log(userWishList);
-	//<WishList wishList={userWishList}></WishList>
 	return(
 		<div>
 			<ProfileWrap>
