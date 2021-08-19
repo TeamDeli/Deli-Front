@@ -24,10 +24,13 @@ const WishWrap = styled.div`
   }
 `;
 
-const WishList = ({wishList}) => {
+const WishList = ({name, wishList}) => {
+  if (wishList === undefined) {
+    wishList = [];
+  }
   return (
     <WishWrap>
-      <h1>기연님이 좋아하신 상품입니다.</h1>
+      <h1>{name}님이 좋아하신 상품입니다.</h1>
       {wishList.length === 0 ? (
         <h3>no items..</h3>
       ) : (

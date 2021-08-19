@@ -23,8 +23,6 @@ const Profile = () => {
 		})();
 	},[]);
 
-	console.log(userData);
-	
 	let userInfo, userFriends, userWishList;
 	if (userData) {
 		userInfo  = {
@@ -38,6 +36,7 @@ const Profile = () => {
 		userFriends = userData.friends;
 		userWishList = userData.wishList;
 	}
+	console.log(userWishList);
 	//<WishList wishList={userWishList}></WishList>
 	return(
 		<div>
@@ -45,7 +44,7 @@ const Profile = () => {
 				<UserInfo userInfo={userInfo}></UserInfo>
 				<Friends list={userFriends}></Friends>
 			</ProfileWrap>
-			
+			<WishList name={userInfo.name} wishList={userWishList}></WishList>
 		</div>
 	);
 }
