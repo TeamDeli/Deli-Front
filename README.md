@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+![deli](https://user-images.githubusercontent.com/71828832/130247602-0686ed85-c09d-41d8-98a5-43308d49ada7.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# SMWU SOLUX PROJECT Team Deli FRONT
 
-## Available Scripts
+# ✔ Project
+--------------
+선물 추천 사이트, Deli
+Delivery delight 선물을 통해 기쁨을 전달하세요💌
 
-In the project directory, you can run:
+# 🙍‍♀️Contributor
+--------------
+[길태연](https://github.com/KilTae)|[김기연](https://github.com/kiiiyeon)|[배소린](https://github.com/bsorinnn)|[이경민](https://github.com/kyungminlee-12)|[이주은](https://github.com/lizuAg)
+---|---|---|---|
+캘린더|프로필|홈|상세보기|친구찾기
 
-### `yarn start`
+# Directory
+--------------
+```
+src
+├── App.js
+├── index.js
+├── assets
+│   ├── images
+├── components
+│   ├── calendar
+│   ├── friends
+|   ├── navBar
+|   ├── product
+│   └── profile
+├── lib
+│   └── api
+└── pages
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Tech Stack and Library
+--------------
+```
+React
+JavaScript ES6
+eslint
+prettier
+fullcalendar
+axios
+styled-component
+antd
+react-router-dom
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Commit Convention
+```
+- feat    : 기능 (새로운 기능)
+- fix     : 버그 (버그 수정)
+- update  : 코드 (코드 수정, 추가, 보완)
+- refactor: 리팩토링
+- style   : 스타일 (코드 형식, 세미콜론 추가: 비즈니스 로직에 변경 없음)
+- docs    : 문서 (문서 추가, 수정, 삭제)
+- test    : 테스트 (테스트 코드 추가, 수정, 삭제: 비즈니스 로직에 변경 없음)
+- chore   : 그 외 변경사항 (주석 추가,삭제 등)
+```
 
-### `yarn test`
+# Git Workflow
+- develop: 통합 브랜치(default)
+  - feature: 기능 개발 브랜치
+- main: 완벽하게 완성된 기능들의 통합 브랜치
+- PR을 통한 코드 리뷰, 전체 팀원들에게 Approve를 받아야 Merge
+- 팀원 코드와 Conflict 난 경우 협의하면서 Resolve
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Views
+--------------
+## 홈
+![image](https://user-images.githubusercontent.com/71828832/130250383-83f00064-88cc-45e0-997e-022b677cc563.png)
 
-### `yarn build`
+## 상세 정보
+![image](https://user-images.githubusercontent.com/71828832/130250637-4c0d2cf4-2a51-4bce-9e39-e18972b463b1.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 프로필
+![image](https://user-images.githubusercontent.com/71828832/130250506-e19c6949-2cbe-40e5-a631-a0a469246a25.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 캘린더
+![image](https://user-images.githubusercontent.com/71828832/130250480-b9e3ce70-e447-42cb-838c-a8dc4316b752.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 친구찾기
+![image](https://user-images.githubusercontent.com/71828832/130250466-e23a1fd2-e431-42c0-be86-ae8160315697.png)
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
