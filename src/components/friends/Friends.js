@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import Styled from "styled-components";
 
 const FriendsWrap = Styled.div`
@@ -83,7 +83,22 @@ const FriendsWrap = Styled.div`
 
 const Friends = ({ list }) => {
   const [userName, setUserName] = useState("");
-  const [friendsList, setFriendsList] = useState(list);
+  const [friendsList, setFriendsList] = useState([
+    "기연",
+    "경민",
+    "소린",
+    "주은",
+    "대장",
+    "햄토리",
+    "델리",
+    "사랑해델리",
+    "왕사랑",
+    "왕감사",
+    "우리팀짱",
+  ]);
+
+  //seEffect(() => {}, []);
+
   let changedList = [];
   function isUserName(userName) {
     if (friendsList && friendsList.includes(userName)) {
@@ -100,7 +115,7 @@ const Friends = ({ list }) => {
 
   const handleChange = (event) => {
     setUserName(event.target.value);
-    setFriendsList(list);
+    setFriendsList(friendsList);
   };
 
   const handleSubmit = (event) => {

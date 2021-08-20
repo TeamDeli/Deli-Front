@@ -4,6 +4,7 @@ import React from "react";
 const WishWrap = styled.div`
   margin-top: 60px;
   margin-left: 250px;
+
   h1 {
     margin-left:20px;
     padding: 20px;
@@ -18,7 +19,7 @@ const WishWrap = styled.div`
     text-align: center;
     font-weight: bold;
   }
-  
+
   div {
     margin-right: 100px;
   }
