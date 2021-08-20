@@ -3,6 +3,7 @@ import "./ProductInformation.css";
 
 class ProductInformation extends Component {
   render() {
+    console.log(this.props.product);
     return (
       <div class="content">
         {/* 제품 설명 부분 */}
