@@ -1,5 +1,4 @@
-import React from "react";
-import Product from "./pages/Product";
+import React, { useState } from "react";
 import AddFriends from "./pages/AddFriends";
 import Profile from "./pages/Profile";
 import Calendar from "./pages/Calendar";
@@ -11,16 +10,21 @@ import "./App.css";
 import "antd/dist/antd.css";
 
 function App() {
+  const [SearchTerm, setSearchTerm] = useState("");
   return (
     <Router>
-      <NavBar />
+      <NavBar setSearchTerm={setSearchTerm} />
       <Switch>
         <Route
           exact
           path="/calendar"
           component={() => <Calendar></Calendar>}
         ></Route>
-        <Route path="/" exact component={LandingPage}></Route>
+        <Route
+          path="/"
+          exact
+          component={() => <LandingPage SearchTerm={SearchTerm}></LandingPage>}
+        ></Route>
         <Route
           exact
           path="/profile"
