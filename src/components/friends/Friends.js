@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import Styled from "styled-components";
 
 const FriendsWrap = Styled.div`
@@ -83,20 +83,25 @@ const FriendsWrap = Styled.div`
 
 const Friends = (list) => {
   const [userName, setUserName] = useState("");
-  const [friendsList, setFriendsList] = useState(list);
+  const [friendsList, setFriendsList] = useState([
+    "기연",
+    "경민",
+    "소린",
+    "주은",
+    "대장",
+    "햄토리",
+    "델리",
+    "사랑해델리",
+    "왕사랑",
+    "왕감사",
+    "우리팀짱",
+  ]);
 
-  useState(() => {
-    console.log(list);
-    console.log(friendsList);
-    console.log(Array.from(friendsList, (item) => item.username));
-  }, []);
+  //seEffect(() => {}, []);
 
   let changedList = [];
   function isUserName(userName) {
-    if (
-      friendsList &&
-      Array.from(friendsList, (item) => item.username).includes(userName)
-    ) {
+    if (friendsList && friendsList.includes(userName)) {
       changedList.push(userName);
       setFriendsList(changedList);
     } else {
@@ -134,9 +139,7 @@ const Friends = (list) => {
       </div>
       <div className="scrollView">
         {friendsList &&
-          Array.from(friendsList, (friend) => friend.username).map(
-            (friend, index) => <p key={index}>{friend.username}</p>
-          )}
+          friendsList.map((friend, index) => <p key={index}>{friend}</p>)}
       </div>
     </FriendsWrap>
   );

@@ -5,14 +5,12 @@ const UserInfoWrap = Styled.div`
 	display: flex;
 	margin-top: 90px;
 	margin-left: 100px;
-
 	.userImage {
 		width: 190px;
 		height: 190px;
 		margin-top: 20px;
 		margin-right: 100px;
 	}
-
 	.userInfo {
 		margin-top: 20px;
 		h2 {
@@ -33,7 +31,6 @@ const ButtonWrap = Styled.a`
 	flex-direction: column;
 	margin-top: -60px;
 	margin-left: 75px;
-
 	.buttonClass {
 		font-size: 35px;
 		width:250px;
@@ -58,10 +55,9 @@ const ButtonWrap = Styled.a`
 	}
 `;
 
-const UserInfo = (userInfo) => {
-  console.log(userInfo);
+const UserInfo = ({ userInfo }) => {
   try {
-    const { id, email, password, username, image, gender, birth, comment } =
+    const { birth, comment, email, gender, id, image, password, username } =
       userInfo;
 
     //a href 링크 수정 필요
@@ -72,8 +68,8 @@ const UserInfo = (userInfo) => {
           <div className="userInfo">
             <h1> {username} </h1>
             <h2> 소개: {comment} </h2>
-            <h2> 이메일: {email} </h2>
-            <h2> 성별: {gender ? "여자 ♀" : "남자 ♂"} </h2>
+            <h2> 나이: {email} </h2>
+            <h2> 성별: {gender ? "남자 ♂" : "여자 ♀"} </h2>
             <h2> 생일: {birth} </h2>
           </div>
         </UserInfoWrap>
