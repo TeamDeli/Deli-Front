@@ -7,7 +7,7 @@ import { gender, age } from "./Sections/Datas";
 
 const { Meta } = Card;
 
-const LandingPage = () => {
+const LandingPage = ({ SearchTerm }) => {
   const [Products, setProducts] = useState([]);
 
   const [Filters, setFilters] = useState({
@@ -15,6 +15,8 @@ const LandingPage = () => {
     age: [],
     price: [],
   });
+
+  const [SearchWord, setSearchWord] = useState(SearchTerm);
 
   useEffect(() => {
     axios
@@ -29,7 +31,7 @@ const LandingPage = () => {
       });
   }, []);
 
-  const getProducts = async (Filters) => {
+  const getProducts = async (Filters, SearchWord) => {
     axios
       .post("http://localhost:8000/deli/product/getProducts", Filters)
       .then((response) => {
@@ -42,6 +44,21 @@ const LandingPage = () => {
         }
       });
   };
+
+  const getSearchResult = (SearchWord) => {
+    axios
+      .get(`http://localhost:8000/deli/product/search?keyword=${SearchWord}`)
+      .then((response) => {
+        if (response.data) {
+          setProducts(response.data);
+          setSearchWord("");
+        } else {
+          console.log("검색 결과 찾기 실패!");
+        }
+      });
+  };
+
+  if (SearchWord) getSearchResult(SearchWord);
 
   const renderCards = Products.map((product, index) => {
     return (
