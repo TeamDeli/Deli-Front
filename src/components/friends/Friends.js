@@ -81,7 +81,7 @@ const FriendsWrap = Styled.div`
 	}
 `;
 
-const Friends = (list) => {
+const Friends = ({ list }) => {
   const [userName, setUserName] = useState("");
   const [friendsList, setFriendsList] = useState([
     "기연",
@@ -115,7 +115,7 @@ const Friends = (list) => {
 
   const handleChange = (event) => {
     setUserName(event.target.value);
-    setFriendsList(list);
+    setFriendsList(friendsList);
   };
 
   const handleSubmit = (event) => {
