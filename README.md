@@ -1,6 +1,6 @@
 
 # SMWU SOLUX PROJECT Team Deli FRONT
-
+- 개발 기간: 2021.07.01 ~ 2021.08.20
 # ✔ Project
 --------------
 ![deli](https://user-images.githubusercontent.com/71828832/130247602-0686ed85-c09d-41d8-98a5-43308d49ada7.png)
@@ -13,7 +13,7 @@ Delivery delight 선물을 통해 기쁨을 전달하세요💌
 ---|---|---|---|---|
 캘린더|프로필|홈|상세보기|친구찾기
 
-# Directory
+# 📂Directory
 --------------
 ```
 src
@@ -32,7 +32,7 @@ src
 └── pages
 ```
 
-# Tech Stack and Library
+# 🛠Tech Stack and Library
 --------------
 ```
 React
@@ -46,7 +46,7 @@ antd
 react-router-dom
 ```
 
-# Commit Convention
+# 🤙Commit Convention
 ```
 - feat    : 기능 (새로운 기능)
 - fix     : 버그 (버그 수정)
@@ -58,14 +58,14 @@ react-router-dom
 - chore   : 그 외 변경사항 (주석 추가,삭제 등)
 ```
 
-# Git Workflow
+# 💻Git Workflow
 - develop: 통합 브랜치(default)
   - feature: 기능 개발 브랜치
 - main: 완벽하게 완성된 기능들의 통합 브랜치
 - PR을 통한 코드 리뷰, 전체 팀원들에게 Approve를 받아야 Merge
 - 팀원 코드와 Conflict 난 경우 협의하면서 Resolve
 
-# Views
+# 🖼Views
 --------------
 ## 홈
 ![image](https://user-images.githubusercontent.com/71828832/130250383-83f00064-88cc-45e0-997e-022b677cc563.png)
