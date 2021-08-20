@@ -31,13 +31,12 @@ function Calendar() {
   const [events,setEvents]=useState([]);
   const onEventAdded = (event) => {
     let calendarApi = calendarRef.current.getApi();
-    console.log(calendarApi);
     calendarApi.addEvent(event);
   };
 
   useEffect(()=>{
     fetch("http://localhost:8000/deli/calendar/get").then((res)=>res.json()).then((res)=>{
-      setEvents(res); console.log(res);
+      setEvents(res);
     })
   },[])
 
@@ -49,23 +48,21 @@ function Calendar() {
       end:e.event.end,
       color:e.event.color
     }
-    console.log(e);
+    
     fetch("http://localhost:8000/deli/calendar/post",{
       method:"POST",
       headers:{
         'Content-Type':'application/json'
       },
       body:JSON.stringify(data),
-    }).then((res)=>res.json()).then((res)=>{
-      console.log(res);
-    })
+    }).then((res)=>res.json()).then()
 
   }
   const deleteEvent=(e)=>{
     fetch("http://localhost:8000/deli/calendar/delete/"+e,{
       method:"DELETE",
     })
-    .then((res)=>res.text()).then((res)=>{console.log(res)})
+    .then((res)=>res.text()).then()
 
   }
 
@@ -82,7 +79,6 @@ function Calendar() {
           eventClick={(e) => {
             if(window.confirm(`${e.event.title}를 삭제하시겠습니까?`)){
               e.event.remove();
-              //console.log(e.evnet);
               deleteEvent(e.event.id);
             }
           }}
