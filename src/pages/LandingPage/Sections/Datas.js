@@ -1,6 +1,6 @@
 const gender = [
-  { _id: 0, name: "남성" },
-  { _id: 1, name: "여성" },
+  { _id: 0, name: "여성" },
+  { _id: 1, name: "남성" },
 ];
 
 const age = [

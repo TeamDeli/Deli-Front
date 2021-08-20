@@ -3,9 +3,10 @@ import ProductInformation from "../components/product/ProductInformation";
 import ProductRecommend from "../components/product/ProductRecommend";
 import Axios from "axios";
 import Data from "../kyungmin.json";
+import { useParams } from "react-router-dom";
 
 function ProductsByFunction(props) {
-  const id = props.match.params.id;
+  const { id } = useParams();
   const [Product, setProduct] = useState([]);
 
   useEffect(() => {

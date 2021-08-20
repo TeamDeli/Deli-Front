@@ -24,34 +24,6 @@ export const NavLink = styled(Link)`
   }
 `;
 
-export const Search = styled.div`
-  right: 700px;
-`;
-
-export const SearchWrap = styled.div`
-  width: 350px;
-  height: 36px;
-  box-sizing: border-box;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background: rgba(179, 191, 201, 0.15);
-  line-height: 33px;
-  padding-left: 37px;
-  padding-right: 37px;
-  border-radius: 19px;
-`;
-
-export const Input = styled.input`
-  color: #000;
-  width: 196px;
-  border: transparent;
-  font-size: 12px;
-  background: transparent;
-  outline: none;
-  &::placeholder {
-    color: #d1d8de;
-  }
-`;
-
 export const Bars = styled(FaBars)`
   display: none;
   color: #fff;
@@ -100,4 +72,3 @@ export const NavBtnLink = styled(Link)`
     color: #010606;
   }
 `;
-
