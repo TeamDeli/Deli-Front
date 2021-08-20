@@ -1,16 +1,16 @@
-![deli](https://user-images.githubusercontent.com/71828832/130247602-0686ed85-c09d-41d8-98a5-43308d49ada7.png)
 
 # SMWU SOLUX PROJECT Team Deli FRONT
 
 # ✔ Project
 --------------
+![deli](https://user-images.githubusercontent.com/71828832/130247602-0686ed85-c09d-41d8-98a5-43308d49ada7.png)
 선물 추천 사이트, Deli
 Delivery delight 선물을 통해 기쁨을 전달하세요💌
 
 # 🙍‍♀️Contributor
 --------------
 [길태연](https://github.com/KilTae)|[김기연](https://github.com/kiiiyeon)|[배소린](https://github.com/bsorinnn)|[이경민](https://github.com/kyungminlee-12)|[이주은](https://github.com/lizuAg)
----|---|---|---|
+---|---|---|---|---|
 캘린더|프로필|홈|상세보기|친구찾기
 
 # Directory
