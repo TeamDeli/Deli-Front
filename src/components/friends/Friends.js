@@ -81,12 +81,22 @@ const FriendsWrap = Styled.div`
 	}
 `;
 
-const Friends = ({ list }) => {
+const Friends = (list) => {
   const [userName, setUserName] = useState("");
   const [friendsList, setFriendsList] = useState(list);
+
+  useState(() => {
+    console.log(list);
+    console.log(friendsList);
+    console.log(Array.from(friendsList, (item) => item.username));
+  }, []);
+
   let changedList = [];
   function isUserName(userName) {
-    if (friendsList && friendsList.includes(userName)) {
+    if (
+      friendsList &&
+      Array.from(friendsList, (item) => item.username).includes(userName)
+    ) {
       changedList.push(userName);
       setFriendsList(changedList);
     } else {
@@ -124,7 +134,9 @@ const Friends = ({ list }) => {
       </div>
       <div className="scrollView">
         {friendsList &&
-          friendsList.map((friend, index) => <p key={index}>{friend}</p>)}
+          Array.from(friendsList, (friend) => friend.username).map(
+            (friend, index) => <p key={index}>{friend.username}</p>
+          )}
       </div>
     </FriendsWrap>
   );

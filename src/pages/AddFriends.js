@@ -15,28 +15,15 @@ const AddFriendsWrap = Styled.div`
 const AddFriends = () => {
   // const [userData, setUserData] = useState(null);
   //const [_wishList, setWishList] = useState(null);
-  const userData = {
-    image: defaultImage,
-    name: "기연",
-    bio: "🔥🔥🔥",
-    age: 24,
-    gender: "여자", //나중에 boolean으로 바꾸기
+  const userInfo = {
+    id: 1,
+    email: "rusl0325@sookmyung.ac.kr",
+    password: "1234",
+    username: "기연",
+    image: "https://sookflix.s3.ap-northeast-2.amazonaws.com/deli.png",
+    gender: false,
     birth: "98.03.25",
-    friendsList: [
-      "경민",
-      "태연",
-      "주은",
-      "소린",
-      "기연",
-      "친구1",
-      "친구2",
-      "친구3",
-      "친구4",
-      "친구1",
-      "친구2",
-      "친구3",
-      "친구4",
-    ],
+    comment: "델리가조아요~❤",
   };
 
   let _wishList = [
@@ -45,24 +32,30 @@ const AddFriends = () => {
     { img: productImg, title: "상품이름3" },
   ];
 
-  let userInfo;
-  let userFriends;
-  if (userData) {
-    userInfo = {
-      image: userData.image,
-      name: userData.name,
-      bio: userData.bio,
-      age: userData.age,
-      gender: userData.gender,
-      birth: userData.birth,
-    };
+  let friendsList;
 
-    userFriends = userData.friendsList;
-  }
+  friendsList = [
+    {
+      id: 1,
+      username: "주은1",
+    },
+    {
+      id: 2,
+      username: "주은2",
+    },
+    {
+      id: 3,
+      username: "주은3",
+    },
+    {
+      id: 4,
+      username: "주은4",
+    },
+  ];
 
   return (
     <AddFriendsWrap>
-      <Friends list={userFriends}></Friends>
+      <Friends List={friendsList}></Friends>
       <div>
         <UserInfo userInfo={userInfo}></UserInfo>
         <WishList friendName={userInfo.name} wishList={_wishList}></WishList>
