@@ -23,7 +23,9 @@
 .fc .fc-toolbar-title {
   font-size: 1.75em;
   margin: 0;
-  font-family: cursive;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #383737;
 }
 
 .fc-h-event .fc-event-title-container {
@@ -51,6 +53,7 @@
   z-index: 4;
   padding: 10px;
   font: icon;
+  color: black;
 }
 
 element.style {
@@ -59,6 +62,13 @@ element.style {
   display: f;
   -index: 0;
   justify-content: center;
+}
+
+.fc .fc-col-header-cell-cushion {
+  display: inline-block;
+  padding: 2px 4px;
+  font-weight: 400;
+  color: #6e6e6e;
 }
 
 .App-header {

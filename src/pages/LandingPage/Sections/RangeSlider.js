@@ -28,10 +28,6 @@ const RangeSlider = (props) => {
     }
   };
 
-  const onAfterChange = (value) => {
-    console.log("onAfterChange: ", value);
-  };
-
   return (
     <>
       <Slider

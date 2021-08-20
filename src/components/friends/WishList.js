@@ -3,12 +3,14 @@ import React from "react";
 
 const WishWrap = styled.div`
   h2 {
-    margin-top: 50px;
+    margin-top: 40px;
     padding: 20px;
+    font-weight: bold;
   }
   .wishContainer {
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
   h3 {
     text-align: center;

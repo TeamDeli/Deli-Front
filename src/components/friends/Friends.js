@@ -1,11 +1,11 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import Styled from "styled-components";
 
 const FriendsWrap = Styled.div`
   display:flex;
   flex-direction:column;
-  margin-top: 160px;
-  margin-left: 50px; /*수정부탁*/
+  margin-top: 100px;
+  margin-left: 50px;
 
   .friends {
     font-size: 30px;
@@ -16,13 +16,12 @@ const FriendsWrap = Styled.div`
 
   .search {
     display:flex;
-    flex-direction:row;
     margin-top: 10px;
     margin-bottom: 20px;
 
     input {
       width: 300px;
-      height: 30px;
+      height: 40px;
       background-color:#fffff;
       border: 2px solid #FD6F22;
       color: black;
@@ -65,21 +64,41 @@ const FriendsWrap = Styled.div`
   .scrollView {
     overflow: auto;
     width: 410px;
-    height: 500px;
+    height: 450px;
     background: #FDAE82;
+    padding: 3px 3px 3px 3px;
   }
 
   p {
     font-size: 20px;
     font-weight: bold;
     color: #ffffff;
+    margin-top: 10px;
     margin-left: 15px;
   }
+  h1 {
+		font-weight: bold;
+	}
 `;
 
 const Friends = ({ list }) => {
   const [userName, setUserName] = useState("");
-  const [friendsList, setFriendsList] = useState(list);
+  const [friendsList, setFriendsList] = useState([
+    "기연",
+    "경민",
+    "소린",
+    "주은",
+    "대장",
+    "햄토리",
+    "델리",
+    "사랑해델리",
+    "왕사랑",
+    "왕감사",
+    "우리팀짱",
+  ]);
+
+  //seEffect(() => {}, []);
+
   let changedList = [];
   function isUserName(userName) {
     if (friendsList && friendsList.includes(userName)) {
@@ -96,7 +115,7 @@ const Friends = ({ list }) => {
 
   const handleChange = (event) => {
     setUserName(event.target.value);
-    setFriendsList(list);
+    setFriendsList(friendsList);
   };
 
   const handleSubmit = (event) => {

@@ -3,20 +3,11 @@ import FullCalendar, { CalendarContent, elementClosest, EventApi, EventSourceApi
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import InteractionPlugin from "@fullcalendar/interaction";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { AddEventModal } from "../components/calendar/AddEventModal";
 import styled from "styled-components";
 import { FaRegCalendarPlus } from "react-icons/fa";
 import { removeElement } from '@fullcalendar/core';
-
-const events1 = [
-  {
-    id: 1,
-    title: "광복절",
-    start: "2021-08-15",
-    color: "#fd6f22"
-  },
-];
 
 const CalendarWrapper=styled.div`
   display:flex;
@@ -37,11 +28,43 @@ const AddBtn = styled.button`
 function Calendar() {
   const [modalOpen, setModalOpen] = useState(false);
   const calendarRef = useRef(null);
+  const [events,setEvents]=useState([]);
   const onEventAdded = (event) => {
     let calendarApi = calendarRef.current.getApi();
-    console.log(calendarApi);
     calendarApi.addEvent(event);
   };
+
+  useEffect(()=>{
+    fetch("http://localhost:8000/deli/calendar/get").then((res)=>res.json()).then((res)=>{
+      setEvents(res);
+    })
+  },[])
+
+  const handleEventAdd=(e)=>{
+    var data={
+      id:e.event.id,
+      title:e.event.title,
+      start:e.event.start,
+      end:e.event.end,
+      color:e.event.color
+    }
+    
+    fetch("http://localhost:8000/deli/calendar/post",{
+      method:"POST",
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify(data),
+    }).then((res)=>res.json()).then()
+
+  }
+  const deleteEvent=(e)=>{
+    fetch("http://localhost:8000/deli/calendar/delete/"+e,{
+      method:"DELETE",
+    })
+    .then((res)=>res.text()).then()
+
+  }
 
   return (
     <div style={{position:"relative",zIndex:0}}>
@@ -51,10 +74,12 @@ function Calendar() {
           plugins={[dayGridPlugin, timeGridPlugin, InteractionPlugin]}
           initialView="dayGridMonth"
           height={590}
-          events={events1}
+          events={events}
+          eventAdd={(e)=>handleEventAdd(e)}
           eventClick={(e) => {
             if(window.confirm(`${e.event.title}를 삭제하시겠습니까?`)){
               e.event.remove();
+              deleteEvent(e.event.id);
             }
           }}
         />
