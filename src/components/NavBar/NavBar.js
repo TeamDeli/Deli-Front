@@ -9,7 +9,6 @@ import {
 } from "./NavBarElements";
 import SearchFeature from "./SearchFeature";
 import deliLogo from "../../assets/images/deli_edited.png";
-
 const NavBar = (props) => {
   const [updateSearchTerm, setupdateSearchTerm] = useState("");
   console.log(updateSearchTerm);
@@ -30,11 +29,11 @@ const NavBar = (props) => {
           <NavLink to="/popular-gift" activeStyle>
             인기 선물
           </NavLink>
-          <NavLink to="/find-friend" activeStyle>
+          <NavLink to="/addFriends" activeStyle>
             친구 찾기
           </NavLink>
-          <NavLink to="/ranking" activeStyle>
-            랭킹
+          <NavLink to="/profile" activeStyle>
+            프로필
           </NavLink>
         </NavMenu>
         <NavBtn>
